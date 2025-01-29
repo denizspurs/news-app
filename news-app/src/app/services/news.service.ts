@@ -30,7 +30,7 @@ export type NewsCategory = 'business' | 'entertainment' | 'general' | 'health' |
 export class NewsService {
   private apiKey = '11271d0b33a34a6ab37aa066650bdffb';
   private apiUrl = 'https://newsapi.org/v2';
-  pageSize = 12;
+  pageSize = 24;
 
   constructor(private http: HttpClient) { }
 
