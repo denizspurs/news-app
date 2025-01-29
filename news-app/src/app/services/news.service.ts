@@ -56,9 +56,32 @@ export class NewsService {
   }
 
   getCategoryNews(category: NewsCategory | string, page: number = 1): Observable<NewsResponse> {
-    let searchQuery = 'türkiye';
-    if (category !== 'all') {
-      searchQuery += ` ${category}`;
+    let searchQuery = '';
+    
+    switch(category) {
+      case 'business':
+        searchQuery = 'türkiye (ekonomi OR finans OR borsa OR dolar OR euro OR altın OR kripto OR bitcoin OR bist OR merkez bankası)';
+        break;
+      case 'entertainment':
+        searchQuery = 'türkiye (magazin OR sinema OR dizi OR film OR müzik OR konser OR festival OR sanat OR eğlence OR televizyon)';
+        break;
+      case 'general':
+        searchQuery = 'türkiye (gündem OR siyaset OR politika OR meclis OR seçim OR hükümet OR belediye OR valilik OR bakanlık)';
+        break;
+      case 'health':
+        searchQuery = 'türkiye (sağlık OR hastane OR doktor OR ilaç OR tedavi OR hastalık OR aşı OR sağlık bakanlığı OR pandemi OR tıp)';
+        break;
+      case 'science':
+        searchQuery = 'türkiye (bilim OR uzay OR nasa OR araştırma OR keşif OR teknoloji OR yapay zeka OR robot OR bilimsel OR tübitak)';
+        break;
+      case 'sports':
+        searchQuery = 'türkiye (spor OR futbol OR basketbol OR voleybol OR fenerbahçe OR galatasaray OR beşiktaş OR trabzonspor OR süper lig OR milli takım)';
+        break;
+      case 'technology':
+        searchQuery = 'türkiye (teknoloji OR yazılım OR bilgisayar OR mobil OR android OR iphone OR samsung OR yapay zeka OR siber güvenlik OR dijital)';
+        break;
+      default:
+        searchQuery = 'türkiye gündem';
     }
     
     const params = {
