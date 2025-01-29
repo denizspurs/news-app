@@ -1,0 +1,392 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Modern UI Theme v2 */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* Global Styles */
+:root {
+  /* Light Theme Colors */
+  --light-primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --light-secondary-gradient: linear-gradient(135deg, #3b82f6 0%, #2dd4bf 100%);
+  --light-background-main: #ffffff;
+  --light-background-card: #f8fafc;
+  --light-text-primary: #1e293b;
+  --light-text-secondary: #475569;
+  --light-accent-color: #2563eb;
+  --light-border-color: #e2e8f0;
+  
+  /* Dark Theme Colors */
+  --dark-primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --dark-secondary-gradient: linear-gradient(135deg, #3b82f6 0%, #2dd4bf 100%);
+  --dark-background-main: #0f172a;
+  --dark-background-card: #1e293b;
+  --dark-text-primary: #f8fafc;
+  --dark-text-secondary: #cbd5e1;
+  --dark-accent-color: #22d3ee;
+  --dark-border-color: #334155;
+  
+  /* Shared Effects */
+  --neon-shadow: 0 0 15px rgba(34, 211, 238, 0.3);
+  --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --glass-effect: rgba(255, 255, 255, 0.05);
+  --blur-effect: blur(8px);
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-lg: 1.5rem;
+  --radius-md: 1rem;
+  --radius-sm: 0.5rem;
+}
+
+/* Light Theme Default */
+:root[data-theme="light"] {
+  --primary-gradient: var(--light-primary-gradient);
+  --secondary-gradient: var(--light-secondary-gradient);
+  --background-main: var(--light-background-main);
+  --background-card: var(--light-background-card);
+  --text-primary: var(--light-text-primary);
+  --text-secondary: var(--light-text-secondary);
+  --accent-color: var(--light-accent-color);
+  --border-color: var(--light-border-color);
+
+  .nav-link:not(.active) {
+    color: #000000 !important;
+    opacity: 0.85;
+    font-weight: 500;
+    
+    &:hover {
+      opacity: 1;
+      color: var(--accent-color) !important;
+    }
+  }
+}
+
+/* Dark Theme */
+:root[data-theme="dark"] {
+  --primary-gradient: var(--dark-primary-gradient);
+  --secondary-gradient: var(--dark-secondary-gradient);
+  --background-main: var(--dark-background-main);
+  --background-card: var(--dark-background-card);
+  --text-primary: var(--dark-text-primary);
+  --text-secondary: var(--dark-text-secondary);
+  --accent-color: var(--dark-accent-color);
+  --border-color: var(--dark-border-color);
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--background-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: var(--blur-effect);
+  -webkit-backdrop-filter: var(--blur-effect);
+  border-bottom: 1px solid var(--glass-effect);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: var(--primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: var(--neon-shadow);
+}
+
+.nav-link {
+  color: var(--text-primary) !important;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+
+  &.active {
+    color: var(--accent-color) !important;
+    opacity: 1;
+    position: relative;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--accent-color);
+      border-radius: 4px;
+    }
+  }
+}
+
+/* Card Styling */
+.card {
+  background: var(--background-card);
+  border: 1px solid var(--glass-effect);
+  backdrop-filter: var(--blur-effect);
+  -webkit-backdrop-filter: var(--blur-effect);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+  
+  &:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--neon-shadow);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: var(--transition);
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-text {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+}
+
+/* Button Styling */
+.btn-primary {
+  background: var(--primary-gradient);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary-gradient);
+    opacity: 0;
+    transition: var(--transition);
+  }
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--neon-shadow);
+    
+    &::before {
+      opacity: 1;
+    }
+  }
+  
+  span {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* Carousel Styling */
+.carousel {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  
+  .carousel-inner {
+    border-radius: var(--radius-lg);
+  }
+  
+  .carousel-item {
+    height: 500px;
+    
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  
+  .carousel-caption {
+    background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    padding: 2rem;
+    
+    h5 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .carousel-control-prev, .carousel-control-next {
+    width: 5%;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 1rem;
+    opacity: 0;
+    transition: var(--transition);
+  }
+  
+  &:hover {
+    .carousel-control-prev, .carousel-control-next {
+      opacity: 1;
+    }
+  }
+}
+
+/* List Group Styling */
+.list-group-item {
+  background: var(--background-card);
+  border: 1px solid var(--glass-effect);
+  color: var(--text-primary);
+  transition: var(--transition);
+  
+  &:hover {
+    background: var(--glass-effect);
+    transform: translateX(10px);
+  }
+  
+  &.active {
+    background: var(--primary-gradient);
+    border-color: transparent;
+    transform: translateX(10px);
+  }
+}
+
+/* Loading Spinner */
+.spinner-border {
+  background: var(--primary-gradient);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Pagination */
+.pagination {
+  .page-link {
+    background-color: var(--background-card);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+    
+    &:hover {
+      background-color: var(--accent-color);
+      color: var(--text-primary);
+      border-color: var(--accent-color);
+    }
+  }
+
+  .active .page-link {
+    background: var(--primary-gradient);
+    border-color: transparent;
+    color: white;
+  }
+}
+
+/* Container Spacing */
+.container, .container-fluid {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 2rem;
+  }
+  
+  .carousel-item {
+    height: 300px;
+  }
+  
+  .navbar-collapse {
+    background: var(--background-card);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    margin-top: 1rem;
+  }
+}
+
+/* Animasyonlar */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.card {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Özel Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-gradient);
+  border-radius: var(--radius-sm);
+}
+
+/* Source and Meta Text Fixes */
+.text-muted, .card-footer small {
+  color: var(--text-secondary) !important;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: var(--background-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-left: 1rem;
+  
+  &:hover {
+    background: var(--accent-color);
+    color: white;
+  }
+  
+  i {
+    font-size: 1.2rem;
+  }
+}

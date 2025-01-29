@@ -1,0 +1,25 @@
+.card {
+  h1, h2, h3, h4, h5 {
+    color: var(--text-primary);
+  }
+
+  p, li {
+    color: var(--text-primary);
+  }
+
+  .text-muted {
+    color: var(--text-primary) !important;
+    opacity: 0.7;
+  }
+
+  ul.list-unstyled li {
+    color: var(--text-primary);
+  }
+}
+
+/* Dark theme için özel ayar */
+:root[data-theme="dark"] .card {
+  .text-muted {
+    color: #cbd5e1 !important;
+  }
+}

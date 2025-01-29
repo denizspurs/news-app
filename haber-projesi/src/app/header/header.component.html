@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">
+      <i class="bi bi-code-square me-2"></i>
+      Gökdeniz Öztürk
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <i class="bi bi-house-door me-1"></i>
+            Ana Sayfa
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/kategoriler" routerLinkActive="active">
+            <i class="bi bi-grid me-1"></i>
+            Kategoriler
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/hakkimda" routerLinkActive="active">
+            <i class="bi bi-person me-1"></i>
+            Hakkımda
+          </a>
+        </li>
+      </ul>
+      <form class="d-flex align-items-center" role="search" (ngSubmit)="onSearch($event)">
+        <div class="input-group">
+          <input 
+            class="form-control search-input" 
+            type="search" 
+            [(ngModel)]="searchQuery"
+            name="search"
+            placeholder="Haber ara..." 
+            aria-label="Search">
+          <button class="btn btn-primary" type="submit">
+            <i class="bi bi-search me-1"></i>
+            <span>Ara</span>
+          </button>
+        </div>
+        <button type="button" class="theme-toggle" (click)="toggleTheme()">
+          <i class="bi" [ngClass]="isDarkTheme ? 'bi-sun' : 'bi-moon'"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>

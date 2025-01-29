@@ -1,0 +1,43 @@
+.navbar {
+  background: var(--background-card);
+  box-shadow: var(--shadow-sm);
+  
+  .navbar-brand {
+    color: var(--text-primary);
+    font-weight: 600;
+    
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+
+  .nav-link {
+    color: var(--text-primary);
+    
+    &:hover, &.active {
+      color: var(--accent-color);
+    }
+  }
+
+  .search-input {
+    background: var(--background-main);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+    
+    &::placeholder {
+      color: var(--text-secondary);
+    }
+  }
+
+  .theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    padding: 0.5rem;
+    margin-left: 1rem;
+    
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+}

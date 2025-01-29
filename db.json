@@ -1,0 +1,74 @@
+{
+  "news": {
+    "business": {
+      "status": "ok",
+      "totalResults": 10,
+      "articles": [
+        {
+          "source": {
+            "id": "business-1",
+            "name": "İş Dünyası"
+          },
+          "author": "Ali Yılmaz",
+          "title": "Türkiye'de Teknoloji Yatırımları Artıyor",
+          "description": "2024 yılında Türkiye'deki teknoloji yatırımları geçen yıla göre %25 artış gösterdi.",
+          "url": "https://example.com/haber1",
+          "urlToImage": "https://picsum.photos/800/400",
+          "publishedAt": "2024-03-19T09:00:00Z",
+          "content": "Türkiye'de teknoloji alanındaki yatırımlar her geçen gün artıyor. Özellikle yazılım ve yapay zeka alanlarında önemli gelişmeler yaşanıyor."
+        },
+        {
+          "source": {
+            "id": "business-2",
+            "name": "Ekonomi Haberleri"
+          },
+          "author": "Ayşe Demir",
+          "title": "Yeni Ekonomi Paketi Açıklandı",
+          "description": "Hükümet tarafından açıklanan yeni ekonomi paketi ile KOBİ'lere önemli destekler sağlanacak.",
+          "url": "https://example.com/haber2",
+          "urlToImage": "https://picsum.photos/800/401",
+          "publishedAt": "2024-03-19T10:30:00Z",
+          "content": "Yeni ekonomi paketi ile KOBİ'lere düşük faizli kredi imkanları ve vergi avantajları sağlanacak."
+        }
+      ]
+    },
+    "technology": {
+      "status": "ok",
+      "totalResults": 10,
+      "articles": [
+        {
+          "source": {
+            "id": "tech-1",
+            "name": "Teknoloji Dünyası"
+          },
+          "author": "Mehmet Yıldız",
+          "title": "Yapay Zeka Alanında Yeni Gelişmeler",
+          "description": "Türk araştırmacılar yapay zeka alanında önemli bir buluşa imza attı.",
+          "url": "https://example.com/haber3",
+          "urlToImage": "https://picsum.photos/800/402",
+          "publishedAt": "2024-03-19T11:00:00Z",
+          "content": "Türk araştırmacılar tarafından geliştirilen yeni yapay zeka algoritması, tıp alanında önemli gelişmelere yol açacak."
+        }
+      ]
+    },
+    "sports": {
+      "status": "ok",
+      "totalResults": 10,
+      "articles": [
+        {
+          "source": {
+            "id": "sports-1",
+            "name": "Spor Haberleri"
+          },
+          "author": "Can Demir",
+          "title": "Milli Takım Yeni Zafer Peşinde",
+          "description": "Türkiye Milli Takımı, önemli bir turnuva öncesi hazırlıklarını sürdürüyor.",
+          "url": "https://example.com/haber4",
+          "urlToImage": "https://picsum.photos/800/403",
+          "publishedAt": "2024-03-19T12:00:00Z",
+          "content": "Milli Takımımız, yaklaşan uluslararası turnuva için yoğun bir hazırlık programı uyguluyor."
+        }
+      ]
+    }
+  }
+} 
